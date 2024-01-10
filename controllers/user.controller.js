@@ -55,6 +55,8 @@ export const loginUser = CatchAsyncError(async (req, res) => {
       }
   
       // Check if the provided password is correct
+      console.log(user)
+      console.log(user.password)
       const passwordMatch = await bcrypt.compare(password, user.password);
   
       if (!passwordMatch) {
