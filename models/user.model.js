@@ -1,6 +1,6 @@
-const mongoose = require('mongoose');
+import mongoose from "mongoose";
 
-const emailRegexPattern: RegExp = /^[^\s@]+@[^\s@]+\.[^\s@]+/;
+const emailRegexPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+/;
 
 const linkSchema = new mongoose.Schema({
   title: {

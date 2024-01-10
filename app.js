@@ -1,8 +1,9 @@
 import express from 'express';
 import dotenv from 'dotenv';
 import cookieParser from 'cookie-parser';
-import { ErrorMiddleware } from './middlewares/error.js';
+import { ErrorMiddleware } from './utils/error.js';
 import cors from "cors";
+import userRouter from './routes/user.route.js';
 
 export const app = express();
 
@@ -24,9 +25,10 @@ app.use(
 );
 
 // routes
-// app.use(
-//     "/api/v1", 
-// );
+app.use(
+    "/api/v1", 
+    userRouter
+);
 
 // testing api
 app.get("/test", (req, res, next) => {
